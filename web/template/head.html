@@ -1,0 +1,14 @@
+{% load static %}
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="{{ description }}">
+<meta name="theme-color" content="{{ color }}"/>
+<script src="{% static 'JS/react/react.production.min.js' %}"></script>
+<script src="{% static 'JS/react/react.development.js' %}"></script>
+<script src="{% static 'JS/react/react-dom.production.min.js' %}"></script>
+<script src="{% static 'JS/react/react-dom.development.js' %}"></script>
+<script src="{% static 'JS/react/babel.min.js' %}"></script>
+<script src="{% static 'JS/jquery.min.js' %}"></script>
+<link  href="{% static 'CSS/bootstrap.min.css' %}" rel="stylesheet" />
+<link  href="{% static 'CSS/icons/font/bootstrap-icons.css' %}" rel="stylesheet"/>
+<title>{{ title|capfirst }}</title>
