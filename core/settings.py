@@ -93,12 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
 ]
 
 
@@ -124,6 +118,10 @@ STATICFILES_DIRS= [BASE_DIR/'web/static',]
 
 MEDIA_URL='/media/'
 MEDIA_ROOT = BASE_DIR/'web/media'
+
+USER_PROFILE_IMAGE_SIZE = (400,400)
+USER_HEADER_IMAGE_SIZE = (1500,500)
+USER_DATA_PATH = 'web/media/users'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

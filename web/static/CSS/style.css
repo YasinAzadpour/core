@@ -1,0 +1,290 @@
+:root {
+  --dark: #131313;
+  --gray: #1e1e1e;
+  --primary: #6909dd;
+  --error: #fe3051;
+  --succes: #05fef6;
+  --warning: #f48c07;
+  --light: #e6e6e6;
+  --border: 1px solid #ffffff1a;
+  --background: var(--dark);
+  font-size: 20px !important;
+}
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scrollbar-width: thin;
+  box-sizing: border-box;
+  color: #fff !important;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  caret-color: var(--primary);
+}
+::selection {
+  background: var(--primary);
+  color: var(--background);
+}
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10rem;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10rem;
+  background: var(#808080);
+}
+::-webkit-scrollbar-button {
+  visibility: hidden;
+}
+i {
+  cursor: pointer;
+  color: inherit;
+}
+body,
+#root {
+  background-color: var(--background);
+}
+button:active,
+button {
+  outline: none !important;
+  border: none !important;
+}
+input[name="username"] {
+  text-transform: lowercase;
+}
+input[name="username"]::placeholder {
+  text-transform: capitalize;
+}
+input + .error {
+  transition: none;
+}
+#loading {
+  animation: loading 0.5s ease-in-out infinite;
+}
+/* display */
+.flex {
+  display: flex;
+}
+.none {
+  display: none;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.unset {
+  display: unset;
+}
+
+/* Authorization Section */
+.auth#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+.auth__container-form--wrapper {
+  z-index: 2;
+  background: transparent;
+  border-left: var(--border);
+  border-right: var(--border);
+  position: relative;
+  margin: auto;
+}
+.auth__container-form--title h6 {
+  color: var(--gray);
+  font-weight: lighter;
+}
+.auth__container-form--title h3 {
+  text-transform: capitalize;
+}
+.auth__container-form--wrapper .error {
+  font-size: 0.6rem;
+  margin: 0.2rem;
+  color: var(--error) !important;
+  pointer-events: none;
+  opacity: 0;
+}
+.auth__container-form--input input {
+  border-bottom: 2px solid var(--primary);
+  background: transparent !important;
+  padding: 0.25rem;
+  transition: 0.1s linear;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+.auth__container-form--input input:focus {
+  opacity: 1;
+}
+.auth__container-form--input {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+.auth__container-form--options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.auth__container-form--options:hover {
+  background: rgba(255, 255, 255, 0.075);
+}
+.auth__container-form--options #title {
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+.auth__container-form--options #details {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+.auth__container--setup__container input {
+  border: none;
+  margin: 0;
+  font-weight: lighter;
+  text-align: center;
+}
+.auth__container--setup__container #category {
+  opacity: 0.75;
+  font-size: 0.8em;
+}
+.auth__container--setup__container #name {
+  font-size: 1.2rem;
+  opacity: 1;
+}
+.auth__container--next-key {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.25rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  display: flex;
+}
+.auth__container--submit__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  transition: 0.1s ease-in-out;
+}
+.auth__container--submit__btn:active {
+  filter: brightness(0.8);
+  transform: scale(0.99);
+}
+.auth__container--submit__btn:disabled {
+  opacity: 0.5;
+}
+.auth__container--help__btn {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.75;
+  background: transparent;
+}
+.auth__container--setprofile__contianer {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  position: relative;
+  outline: 2px solid var(--primary);
+  border: 2px solid transparent;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth__container--setprofile__contianer input[type="file"] {
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.auth__container--setprofile__contianer img {
+  color: transparent !important;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+.auth__container-form--input.invalid .error,
+.auth__container-form--input input:invalid + .error {
+  opacity: 1 !important;
+}
+.auth__container-form--input input:invalid,
+.auth__container-form--input.invalid input {
+  border-bottom-color: var(--error) !important;
+}
+.auth__container--setprofile__contianer.invalid {
+  outline-color: var(--error) !important;
+}
+.auth__container--setup__container
+  .auth__container-form--input.invalid
+  input[type="text"] {
+  color: var(--error) !important;
+}
+
+@media (min-width: 968px) {
+  .auth__container-form--input input {
+    font-size: 1.5em;
+  }
+  .auth__container--setup__container input {
+    font-size: 2em !important;
+  }
+  .auth__container--setup__container #category {
+    font-size: 1.5em !important;
+  }
+  .auth__container-form--input .error {
+    font-size: 0.9em;
+  }
+  .auth__container--help__btn {
+    font-size: 1em;
+  }
+  .auth__container--submit__btn {
+    font-size: 1.5em;
+  }
+  .auth__container-form--options #title {
+    font-size: 1.5em;
+  }
+  .auth__container-form--options #details {
+    font-size: 1.25em;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

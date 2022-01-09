@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "../head.html" with title=pagename %}
+    <script src="{% static 'JS/apps/Auth.jsx' %}" type="text/jsx"></script>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+  </head>
+  <body>
+    <div class="auth" id="root">
+      <noscript>Please enable JavaScript in your browser!</noscript>
+      <span id="loading">
+        <span>•</span>
+        <span>•</span>
+        <span>•</span>
+      </span>  
+    </div>
+    <script type="text/jsx">
+      const pageName = "{{ pagename }}";
+      const initialForm = {};
+      initialForm["csrfmiddlewaretoken"] = "{{ csrftoken }}";
+      ReactDOM.render(<Auth />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
