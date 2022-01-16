@@ -1,5 +1,7 @@
 const useState = React.useState;
 const useEffect = React.useEffect;
+const useContext = React.useContext;
+const createContext = React.createContext;
 
 const Loading = () => {
   return (
