@@ -4,6 +4,7 @@ import cv2
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.core import files, validators
+from django.core.cache import cache
 from django.db import models
 from django.utils.deconstruct import deconstructible
 from django.utils.translation import gettext_lazy as _
@@ -93,3 +94,33 @@ class User(AbstractUser):
 
         except:
             return False
+
+    def to_json(self):
+        data = {
+            'id': self.pk,
+            'username': self.username,
+            'name': self.name,
+            'category': self.category,
+            'bio': self.bio,
+            'email': self.email,
+            'header': self.header.url if self.header else '',
+            'profile': self.profile.url if self.profile else '',
+        }
+        return data
+
+    @classmethod
+    def search(cls, text):
+        '''
+        search in the users(username and name)
+        '''
+        if 'users' in cache:
+            users = cache.get('users', [])
+            
+        else:
+            users = list(map(lambda item: item.to_json(), cls.objects.all()))
+            cache.set('users', users)
+        
+        result = list(filter(lambda user: text in user['username'] or text in user['name'], users))
+
+        return result
+
