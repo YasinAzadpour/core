@@ -120,3 +120,16 @@ def edit_profile(request):
         return JsonResponse(data)
 
     return JsonResponse({'result': 'error'})
+
+
+@require_POST
+def search(request):
+    try:
+        text = request.POST['text']        
+        result  = User.search(text)
+        assert result
+        return JsonResponse({'result': 'ok','data': result[:50]})
+
+    except:
+        return JsonResponse({'result': 'error'})
+
