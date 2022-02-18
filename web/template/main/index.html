@@ -3,8 +3,9 @@
 <html lang="en">
   <head>
     {% include "../head.html" with title="Home" %}
-    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'CSS/style.css' %}" /> {% endcomment %}
     <script src="{% static 'JS/apps/navbar.jsx' %}" type="text/jsx"></script>
+    <script src="{% static 'JS/apps/chat.jsx' %}" type="text/jsx"></script>
   </head>
   <body>
     <div class="main" id="root">
@@ -23,7 +24,7 @@
         category : "{{ request.user.category }}",
         bio : "{{ request.user.bio }}",
         email : "{{ request.user.email }}",
-        
+        id: "{{request.user.pk}}",
         {% if request.user.profile %}
           profile : "{{ request.user.profile.url }}",
         {% endif %}
@@ -45,7 +46,8 @@
 
       const page = (
         <MyDataContext.Provider value={myProps} >
-          <NavSection name={"home"} position={0}/>
+          {% comment %} <NavSection name={"home"} position={0}/> {% endcomment %}
+          <ChatSection />
         </MyDataContext.Provider >
       );
       ReactDOM.render(page, document.getElementById("root"));

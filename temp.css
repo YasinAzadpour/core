@@ -1,0 +1,236 @@
+.f-02 {
+  font-size: 0.2rem !important;
+}
+.f-03 {
+  font-size: 0.3rem !important;
+}
+.f-04 {
+  font-size: 0.4rem !important;
+}
+.f-05 {
+  font-size: 0.5rem !important;
+}
+.f-06 {
+  font-size: 0.6rem !important;
+}
+.f-07 {
+  font-size: 0.7rem !important;
+}
+.f-08 {
+  font-size: 0.8rem !important;
+}
+.f-09 {
+  font-size: 0.9rem !important;
+}
+.f-1 {
+  font-size: 1rem !important;
+}
+.f-1-5 {
+  font-size: 1.5rem !important;
+}
+
+.at-right,
+.ab-right,
+.ar {
+  right: 0;
+}
+.m-w-100 {
+  min-width: 100%;
+}
+.m-h-100 {
+  min-height: 100%;
+}
+.h-100vh {
+  height: 100vh;
+}
+.no-scroll {
+  scrollbar-width: none;
+  overflow: hidden;
+  resize: none;
+}
+.min-width-max-contact {
+  min-width: max-content;
+}
+.btn-shadow {
+  color: var(--normal) !important;
+  background: var(--dark) !important;
+  box-shadow: inset 0 0 0.1rem #ffffff1a, 0 0 0.8rem #00000080 !important;
+  text-shadow: 0 0 0.2rem;
+  transition: 0.1s ease-in-out;
+}
+.btn-shadow:active {
+  box-shadow: inset 0 0 0.1rem #ffffff1a, 0 0 0.2rem #00000080 !important;
+  scale: 0.95;
+  transition: none;
+}
+
+button.cancel {
+  text-shadow: none !important;
+  color: var(--gray) !important;
+  opacity: 0.8 !important;
+}
+.hr-90:hover {
+  transform: rotate(90deg);
+}
+.hr--90:hover {
+  transform: rotate(-90deg);
+}
+.text-shadow {
+  text-shadow: 0 0 0.2rem;
+}
+.default-shadow {
+  box-shadow: inset 0 0 0.2rem #3c3c3c66, 0 0 1rem #0000002e;
+}
+
+.my-message-shadow {
+  box-shadow: 0 0 1rem #6909dd3d;
+}
+.other-message-shadow {
+  box-shadow: inset 0 0 0.2rem #ffffff0a;
+}
+.menu {
+  cursor: pointer;
+  top: 25%;
+  right: 25%;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.2);
+  transition: 0.2s ease-in-out;
+}
+.pointer-none {
+  pointer-events: none;
+}
+.brighness-150:hover {
+  filter: brightness(150%);
+}
+
+/* absolute */
+.ab,
+.at,
+.al,
+.ar,
+.at-left,
+.at-right,
+.ab-left,
+.ab-right {
+  position: absolute;
+}
+.at-left,
+.at-right,
+.at {
+  top: 0;
+}
+.ab-left,
+.ab-right,
+.ab {
+  bottom: 0;
+}
+.at-left,
+.ab-left,
+.al {
+  left: 0;
+}
+.at-right,
+.ab-right,
+.ar {
+  right: 0;
+}
+/* z-index */
+.z--1 {
+  z-index: -1;
+}
+.z-2 {
+  z-index: 2;
+}
+.z-9 {
+  z-index: 9;
+}
+.z-99 {
+  z-index: 99;
+}
+.z-999 {
+  z-index: 999;
+}
+.z-9999 {
+  z-index: 9999;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.b-left {
+  border-left: 1px solid var(--border);
+}
+.b-right {
+  border-right: 1px solid var(--border);
+}
+.b-top {
+  border-top: 1px solid var(--border);
+}
+.b-bottom {
+  border-bottom: 1px solid var(--border);
+}
+.b-b,
+.b-y {
+  border-bottom: 1px solid var(--border);
+}
+.b-t,
+.b-y {
+  border-top: 1px solid var(--border);
+}
+.b-r,
+.b-x {
+  border-right: 1px solid var(--border);
+}
+.b-l,
+.b-x {
+  border-left: 1px solid var(--border);
+}
+.b-1 {
+  border: var(--border);
+}
+.left-25 {
+  left: 25%;
+}
+.left-50 {
+  left: 50%;
+}
+.left-75 {
+  left: 75%;
+}
+.right-25 {
+  right: 25%;
+}
+.right-50 {
+  right: 50%;
+}
+.right-75 {
+  right: 75%;
+}
+.top-25 {
+  top: 25%;
+}
+.top-50 {
+  top: 50%;
+}
+.top-75 {
+  top: 75%;
+}
+.bottom-25 {
+  bottom: 25%;
+}
+.bottom-50 {
+  bottom: 50%;
+}
+.bottom-75 {
+  bottom: 75%;
+}
+
+.intro {
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+}

@@ -1,0 +1,78 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- {% comment %} {% include "../head.html" with title="Home" %} {% endcomment %} -->
+    <script src="../../static/JS/react/react.production.min.js"></script>
+    <script src="../../static/JS/react/react.development.js"></script>
+    <script src="../../static/JS/react/react-dom.production.min.js"></script>
+    <script src="../../static/JS/react/react-dom.development.js"></script>
+    <script src="../../static/JS/react/babel.min.js"></script>
+    <script src="../../static/JS/index.jsx" type='text/jsx'></script>
+    <script src="../../static/JS/jquery.min.js"></script>
+    <link  href="../../static/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link  href="../../static/CSS/icons/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../static/CSS/style.css" />
+    <script src="../../static/JS/apps/navbar.jsx" type="text/jsx"></script>
+    <script src="../../static/JS/apps/chat.jsx" type="text/jsx"></script>
+
+  </head>
+  <body>
+    <div class="main" id="root">
+      <noscript>Please enable JavaScript in your browser!</noscript>
+      <span id="loading" style="top: 50%;left: calc(50% - 1.5ch);position: fixed;">
+        <span>•</span>
+        <span>•</span>
+        <span>•</span>
+      </span>
+    </div>
+    <script type="text/jsx">
+      // const myProps= {
+      //   csrfmiddlewaretoken : "{{ csrftoken }}",
+      //   username : "{{ request.user.username }}",
+      //   name : "{{ request.user.name }}",
+      //   category : "{{ request.user.category }}",
+      //   bio : "{{ request.user.bio }}",
+      //   email : "{{ request.user.email }}",
+        
+      //   {% if request.user.profile %}
+      //     profile : "{{ request.user.profile.url }}",
+      //   {% endif %}
+        
+      //   {% if request.user.header %}
+      //     header :"{{ request.user.header.url }}",
+      //   {% endif %}
+        
+      //   {% if request.user.is_superuser %}
+      //     isSuperUser : true,
+      //   {% endif %}
+        
+      //   {% if request.user.is_staff %}
+      //     isStaff : true,
+      //   {% endif %}
+        
+      // };
+      const myProps= {
+        username : "username",
+        name : "myname",
+        category : "Programmer",
+        bio : "Hi there",
+        email : "email@email.com",
+        profile : "/home/yasin/Pictures/Wallpapers/moon.jpg",
+        header :"/home/yasin/Pictures/Wallpapers/moon.jpg",
+        isSuperUser : true,
+        isStaff : true,
+        
+      };
+      const MyDataContext = createContext();
+
+      const page = (
+        <MyDataContext.Provider value={myProps} >
+          <NavSection name={"home"} position={0}/>
+          <ChatSection />
+        </MyDataContext.Provider >
+      );
+      ReactDOM.render(page, document.getElementById("root"));
+    </script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 const NavSection = ({ name, position }) => {
   const [nav, setNav] = useState(name);
   const [num, setNum] = useState(position);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const me = useContext(MyDataContext);
 
   const handleClick = (e) => {

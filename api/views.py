@@ -12,6 +12,8 @@ from django.middleware import csrf
 from django.views.decorators.http import require_POST
 from PIL import Image
 
+from main.models import Message
+
 
 User = get_user_model()
 
@@ -133,3 +135,14 @@ def search(request):
     except:
         return JsonResponse({'result': 'error'})
 
+
+def get_private_chat(request, user_id):
+    try:
+        result = {
+            'result': 'ok',
+            'data': Message.get_conversation(request.user.id, user_id)
+        }
+        return JsonResponse(result)
+        
+    except:
+        return JsonResponse({'result': 'error'})
